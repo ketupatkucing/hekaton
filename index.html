@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="topNav">
+            <span>🐾Klinik Kucing</span>
+            <div class="burger" onclick="openDrawer()">☰</div>
+            <div class="burgerClose" onclick="closeDrawer()">☰</div>
+        </div>
+    </header>
+
+    <!-- Drawer Menu -->
+    <div id="drawer" class="drawer">
+        <h3>Menu</h3>
+        <a href="#">Edit Profil</a>
+        <button>Logout</button>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+            <b>Menu Utama</b>
+            <div class="iconContainer">
+                <div class="icon"><img src="{{ asset('icon/home-office.png') }}" alt="" srcset=""></div>
+                <div class="icon"><img src="{{ asset('icon/home-office.png') }}" alt="" srcset=""></div>
+                <div class="icon"><img src="{{ asset('icon/home-office.png') }}" alt="" srcset=""></div>
+                <div class="icon"><img src="{{ asset('icon/home-office.png') }}" alt="" srcset=""></div>
+            </div>
+
+        </div>
+        <div class="section">
+            <b>Untuk Kucingmu</b>
+            <div class="slideBody">
+                <div class="articleContainer">
+                    <div class="leftArticle show"><img src="{{ asset('img/meng1.webp') }}" alt="" srcset=""></div>
+                    <div class="leftArticle hidden"><img src="{{ asset('img/meng2.webp') }}" alt="" srcset=""></div>
+                    <div class="leftArticle hidden"><img src="{{ asset('img/meng3.webp') }}" alt="" srcset=""></div>
+                </div>
+                <div class="articleContainer">
+                    <div class="rightArticle show"><img src="{{ asset('img/meng4.webp') }}" alt="" srcset=""></div>
+                    <div class="rightArticle hidden"><img src="{{ asset('img/meng5.webp') }}" alt="" srcset=""></div>
+                    <div class="rightArticle hidden"><img src="{{ asset('img/meng6.webp') }}" alt="" srcset=""></div>
+                </div>
+            </div>
+
+            <div class="slideBtn">
+                <button id="left" onclick="prev()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    
+                </button>
+
+                <button id="right" onclick="next()">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            {{-- <div class="slideBtn">
+                <button id="left" onclick="prev()">kiri</button>
+                <button id="right" onclick="next()">kanan</button>
+            </div> --}}
+            {{-- <h3>📅 Jadwal Dokter</h3>
+            <table>
+                <tr>
+                    <th>Nama Dokter</th>
+                    <th>Hari</th>
+                    <th>Jam</th>
+                </tr>
+                <tr>
+                    <td>Drh. Meowth</td>
+                    <td>Senin - Rabu</td>
+                    <td>09:00 - 14:00</td>
+                </tr>
+                <tr>
+                    <td>Drh. Luna</td>
+                    <td>Kamis - Sabtu</td>
+                    <td>10:00 - 16:00</td>
+                </tr>
+            </table> --}}
+        </div>
+
+        <div class="section">
+            {{-- <h3>📝 Registrasi Antrian Online</h3>
+
+            <label>Nama Pemilik</label>
+            <input type="text" placeholder="Masukkan nama" />
+
+            <label>Nama Kucing</label>
+            <input type="text" placeholder="Nama kucing" />
+
+            <label>Pilih Dokter</label>
+            <select>
+                <option>Drh. Meowth</option>
+                <option>Drh. Luna</option>
+            </select>
+
+            <label>Keluhan</label>
+            <textarea placeholder="Masukkan keluhan"></textarea>
+
+            <button class="btn">Daftar Antrian</button> --}}
+        </div>
+        <script>
+
+
+        </script>
+        <script src="{{ asset('js/dashboard.js') }}"></script>
+    </div>
+
+</body>
+
+</html>
