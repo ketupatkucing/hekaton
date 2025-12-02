@@ -81,3 +81,29 @@ function prev() {
         }
     }
 }
+
+// Initialize Lucide Icons after DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Note: Lucide renders <i> tags into SVG icons.
+            lucide.createIcons();
+            
+            // Initial setup for the active icon color
+            const initialActiveItem = document.querySelector('.navItem.active');
+            if (initialActiveItem) {
+                // The color is already handled by CSS rule .nav-item.active { color: var(--primary-blue); }
+                // No need to set inline style anymore, CSS handles the color on load.
+            }
+        });
+
+        // Function to handle setting the active state
+        function setActive(element) {
+            // 1. Remove 'active' class from all navigation items
+            document.querySelectorAll('.navItem').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // 2. Add 'active' class to the clicked element
+            element.classList.add('active');
+            
+            
+        }
