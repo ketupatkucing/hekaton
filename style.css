@@ -266,8 +266,8 @@ textarea:focus {
 
 .btn {
     padding: 12px 18px;
-    background: #ff9900;
-    color: white;
+     background: #45b3e0;               
+    color: #2d6fae;  
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -279,7 +279,7 @@ textarea:focus {
 }
 
 .btn:hover {
-    background: #e58700;
+    background: #1f8dba;
     transform: scale(1.03);
 }
 
