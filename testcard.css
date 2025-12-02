@@ -1,0 +1,145 @@
+/* Define custom colors as CSS variables for easy maintenance */
+        :root {
+            --card-blue: #4FC3F7;
+            --card-dark-blue: #00B0FF;
+            --status-pink: #F48FB1;
+            --status-text: #880E4F;
+            --bg-light: #f3f4f6; /* Equivalent to gray-100 */
+        }
+
+        /* Global Body Styles */
+        .hero {
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem; /* Equivalent to p-4 */
+            margin: 0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Card Container Styles */
+        .card-container {
+            width: 100%;
+            height: 200px;
+            max-width: 384px; /* Equivalent to max-w-sm */
+            color: white;
+            padding: 1.5rem; /* Equivalent to p-6 */
+            border-radius: 0.75rem; /* Equivalent to rounded-xl */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Equivalent to shadow-2xl */
+            overflow: hidden;
+            
+            /* Background Gradient and Shapes (from original custom CSS) */
+            background: linear-gradient(135deg, var(--card-blue) 0%, var(--card-dark-blue) 100%);
+            position: relative;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            z-index: 1; /* Ensure card is above body background */
+        }
+
+        .card-container:hover {
+            transform: scale(1.02); /* Equivalent to hover:scale-[1.02] */
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.35); 
+        }
+
+        /* Abstract shape 1 (top-left rounded corner overlay) */
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: rotate(15deg);
+            z-index: 0;
+        }
+
+        /* Abstract shape 2 (bottom-right wave/curve) */
+        .card-container::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 40% 60% 70% 30% / 30% 30% 70% 70%;
+            transform: rotate(-20deg);
+            z-index: 0;
+        }
+
+        /* Inner Content Container */
+        .card-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem; /* Replaces space-y-4 */
+        }
+
+        /* Name and Subtitle Section */
+        
+
+        .name-section h1 {
+            font-size: 1.4rem; /* Equivalent to text-3xl */
+            font-weight: 700; /* Equivalent to font-bold */
+            margin-bottom: 0.25rem; /* Equivalent to mb-1 */
+            margin-top: 0;
+        }
+
+        .name-section .subtitle {
+            font-size: 1rem; /* Equivalent to text-base */
+            opacity: 0.9; /* Equivalent to opacity-90 */
+        }
+        
+        .name-section .subtitle span {
+            font-size: 0.875rem; /* Equivalent to text-sm */
+        }
+
+        /* Large ID/Number */
+        .card-number {
+            flex-grow: 1;
+        }
+
+        .card-number p {
+            font-size: 1.5rem; /* Equivalent to text-4xl */
+            font-weight: 300; /* Equivalent to font-light */
+            letter-spacing: 0.025em; /* Equivalent to tracking-wide */
+            word-break:break-word;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* Responsive size for number */
+        @media (min-width: 640px) {
+            .card-number p {
+                font-size: 1.5rem; /* Equivalent to sm:text-5xl */
+            }
+        }
+
+        /* Status Section */
+        .status-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem; /* Equivalent to pt-4 */
+        }
+
+        .status-section p {
+            font-size: 1.125rem; /* Equivalent to text-lg */
+            opacity: 0.9; /* Equivalent to opacity-90 */
+            margin: 0;
+        }
+
+        /* Status Badge (Belum Dibayar) */
+        .status-badge {
+            padding: 0.25rem 1rem; /* Equivalent to px-4 py-1 */
+            font-size: 0.875rem; /* Equivalent to text-sm */
+            font-weight: 600; /* Equivalent to font-semibold */
+            border-radius: 9999px; /* Equivalent to rounded-full */
+            background-color: var(--status-pink); /* Equivalent to bg-status-pink */
+            color: var(--status-text); /* Equivalent to text-status-text */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+        }
