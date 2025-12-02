@@ -4,21 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Klinik Kucing</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="testcard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="lucide.min.js"></script>
 </head>
 
 <body>
 
     <header>
         <div class="topNav">
-            <span>🐾Klinik Kucing</span>
+            <div class="logo">
+                <img src="pawprint.png" alt="" srcset="">
+                <b>Klinik Kucing</b>
+
+            </div>
+
             <div class="burger" onclick="openDrawer()">☰</div>
             <div class="burgerClose" onclick="closeDrawer()">☰</div>
         </div>
     </header>
 
-    <!-- Drawer Menu -->
+   
     <div id="drawer" class="drawer">
         <h3>Menu</h3>
         <a href="#">Edit Profil</a>
@@ -28,22 +36,78 @@
 
     <div class="container">
         <div class="section">
-            <b>Menu Utama</b>
-            <div class="iconContainer">
-                <div class="icon"><img src="home-office.png" alt="" srcset=""></div>
-                <div class="icon"><img src="home-office.png" alt="" srcset=""></div>
-                <div class="icon"><img src="home-office.png" alt="" srcset=""></div>
-                <div class="icon"><img src="home-office.png" alt="" srcset=""></div>
+            <div class="hero">
+
+                <div class="card-container">
+
+                  
+                    <div class="card-content">
+
+                      
+                        <div class="name-section">
+                            <h1>Abdul Kimbab</h1>
+                            <p class="subtitle">
+                                1127 poin
+                            </p>
+                        </div>
+
+                       
+                        <div class="card-number">
+                            <p>
+                                0081 3357 4573 0031
+                            </p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="cardBtnWrapper">
+                <div class="cardBtn">
+                    <button><img src="cat-paw.png" alt="" srcset=""></button>
+                </div>
+                <div class="cardBtn">
+                    <button><img src="cat-paw.png" alt="" srcset=""></button>
+                </div>
+                <div class="cardBtn">
+                    <button><img src="'cat-paw.png}" alt="" srcset=""></button>
+                </div>
             </div>
 
+
+
         </div>
+        <div class="section">
+            <b>Menu Utama</b>
+            <div class="iconContainer">
+                <button class="iconWapper">
+                    <div class="icon"><img src="catcard.png" alt="" srcset=""></div>
+                    <b>Data Kucingmu</b>
+                </button>
+                <button class="iconWapper">
+                    <div class="icon"><img src="home-office.png" alt="" srcset=""></div>
+                    <b>Daftar Antrian</b>
+                </button>
+                <button class="iconWapper">
+                    <div class="icon"><img src="petcat.png" alt="" srcset=""></div>
+                    <b>Konsultasi</b>
+                </button>
+                <button class="iconWapper">
+                    <div class="icon"><img src="appointment.png" alt="" srcset=""></div>
+                    <b>Jadwal Praktik</b>
+                </button>
+            </div>
+        </div>
+
         <div class="section">
             <b>Untuk Kucingmu</b>
             <div class="slideBody">
                 <div class="articleContainer">
-                    <div class="leftArticle show"><img src="meng1.webp" alt="" srcset=""></div>
-                    <div class="leftArticle hidden"><img src="meng2.webp" alt="" srcset=""></div>
-                    <div class="leftArticle hidden"><img src="meng3.webp" alt="" srcset=""></div>
+                    <div class="leftArticle show"><img src="{{ asset('img/meng1.webp') }}" alt="" srcset=""></div>
+                    <div class="leftArticle hidden"><img src="{{ asset('img/meng2.webp') }}" alt="" srcset=""></div>
+                    <div class="leftArticle hidden"><img src="{{ asset('img/meng3.webp') }}" alt="" srcset=""></div>
                 </div>
                 <div class="articleContainer">
                     <div class="rightArticle show"><img src="meng4.webp" alt="" srcset=""></div>
@@ -57,63 +121,88 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
-                    
+
                 </button>
 
                 <button id="right" onclick="next()">
-                    
+
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
             </div>
 
-             <h3>📅 Jadwal Dokter</h3>
-            <table>
-                <tr>
-                    <th>Nama Dokter</th>
-                    <th>Hari</th>
-                    <th>Jam</th>
-                </tr>
-                <tr>
-                    <td>Drh. Meowth</td>
-                    <td>Senin - Rabu</td>
-                    <td>09:00 - 14:00</td>
-                </tr>
-                <tr>
-                    <td>Drh. Luna</td>
-                    <td>Kamis - Sabtu</td>
-                    <td>10:00 - 16:00</td>
-                </tr>
-            </table> 
+           
+           
         </div>
 
         <div class="section">
-           <h3>📝 Registrasi Antrian Online</h3>
+            <b>Riwayat Pelayanan</b>
+            <div class="checkUpContainer">
+                <div class="icon2"><img src="catsick.png" alt="" srcset=""></div>
+                <div class="checkUpDetail">
+                    <div class="checkUpHeader">
+                        <b>Rawat Inap</b>
+                    </div>
+                    <div class="checkUpBody">
+                        <p>Klinik Kucing Pesanggrahan</p>
+                        <p>12/12/2025</p>
+                    </div>
+                </div>
+                <button id="right">
 
-            <label>Nama Pemilik</label>
-            <input type="text" placeholder="Masukkan nama" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+               
+            </div>
 
-            <label>Nama Kucing</label>
-            <input type="text" placeholder="Nama kucing" />
-
-            <label>Pilih Dokter</label>
-            <select>
-                <option>Drh. Meowth</option>
-                <option>Drh. Luna</option>
-            </select>
-
-            <label>Keluhan</label>
-            <textarea placeholder="Masukkan keluhan"></textarea>
-
-            <button class="btn">Daftar Antrian</button> 
         </div>
-        <script>
 
 
-        </script>
-        <script src="dashboard.js"></script>
+
+
     </div>
+    <div class="navSection">
+        <div class="navContainer">
+            <div class="navMenu">
+                
+                <div class="navItem active" data-name="Beranda" onclick="setActive(this)">
+                    <span class="navIcon">
+                        <i data-lucide="home"></i>
+                    </span>
+                    <span class="navText">Beranda</span>
+                </div>
+
+                
+                <div class="navItem" data-name="Scan" onclick="setActive(this)">
+                    <span class="navIcon">
+                        <i data-lucide="layout-grid"></i>
+                    </span>
+                    <span class="navText">Scan</span>
+                </div>
+
+               
+                <div class="navItem" data-name="FAQ" onclick="setActive(this)">
+                    <span class="navIcon">
+                        <i data-lucide="help-circle"></i>
+                    </span>
+                    <span class="navText">FAQ</span>
+                </div>
+
+               
+                <div class="navItem" data-name="Profil" onclick="setActive(this)">
+                    <span class="navIcon">
+                        <i data-lucide="user"></i>
+                    </span>
+                    <span class="navText">Profil</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
 
 </body>
 
